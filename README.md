@@ -4,7 +4,7 @@ WeatherNow is a web application that allows users to search for and view weather
 
 ## Live Preview
 
-You can view a live preview of the application [here](https://your-live-preview-link.com).
+You can view a live preview of the application [here](https://aniketsharma-dev.github.io/Weather-App/).
 
 ## Features
 
