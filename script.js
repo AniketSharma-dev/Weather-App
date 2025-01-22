@@ -7,6 +7,27 @@ let citiesList = [];
 let selectedCity = null;
 
 /**
+ * Polyfill for Element.closest() for older browsers.
+ */
+if (!Element.prototype.closest) {
+    Element.prototype.closest = function (selector) {
+        var el = this;
+        while (el) {
+            if (el.matches(selector)) return el;
+            el = el.parentElement;
+        }
+        return null;
+    };
+}
+
+/**
+ * Polyfill for Element.matches() for older browsers.
+ */
+if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+}
+
+/**
  * Sets up event listeners for the application.
  */
 function setupEventListeners() {
@@ -263,4 +284,12 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchCities();
     const selectedCity = localStorage.getItem('selectedCity');
     fetchWeather(selectedCity ? selectedCity : "London");
+    window.addEventListener('resize', handleResize);
 });
+
+/**
+ * Handles window resize events.
+ */
+function handleResize() {
+    // Add any specific resize handling logic if needed
+}

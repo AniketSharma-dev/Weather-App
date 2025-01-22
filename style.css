@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+       -moz-font-smoothing: antialiased;
+            font-smoothing: antialiased;
 }
 
 body {
@@ -34,7 +40,7 @@ body {
     background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
     border-radius: 10px;
     position: relative;
-    overflow: auto;
+    overflow: hidden; /* Change from auto to hidden */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -173,6 +179,7 @@ body {
     border-radius: 16px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(79, 70, 229, 0.3);
+    overflow-y: auto; /* Add this line */
 }
 
 .weather-main {
@@ -333,5 +340,54 @@ body {
     
     .detail-value {
         font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        overflow: auto; /* Add this line */
+    }
+
+    .weather-app {
+        padding: 10px;
+    }
+
+    .temperature {
+        font-size: 60px;
+    }
+
+    .weather-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .detail-card {
+        padding: 12px;
+    }
+
+    .detail-value {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .temperature {
+        font-size: 48px;
+    }
+
+    .weather-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .detail-card {
+        padding: 10px;
+    }
+
+    .detail-value {
+        font-size: 18px;
     }
 }
