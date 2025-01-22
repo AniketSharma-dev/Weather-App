@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <div class="search-container">
+                <div class="search-box-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" 
+                           class="search-box" 
+                           id="cityInput" 
+                           placeholder="Search for a city..."
+                           autocomplete="off">
+                    <i class="fas fa-times clear-icon" id="clearInput"></i>
+                </div>
+                <div class="suggestions-container" id="suggestions"></div>
+            </div>
+
+            <div id="weatherInfo" class="weather-content"></div>
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner"></i>
+                Loading weather data...
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+   <script src="script.js"></script>
+</body>
+</html>
